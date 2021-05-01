@@ -75,9 +75,6 @@ namespace OnlineShop.Areas.Admin.Controllers
             return View(productTypes);
         }
 
-
-
-
         // Details Get Action Method
         public ActionResult Details(int? id)
         {
@@ -101,6 +98,54 @@ namespace OnlineShop.Areas.Admin.Controllers
         public IActionResult Details(ProductTypes productTypes)
         {
             return RedirectToAction(nameof(Index));
+        }
+
+        // Delete Get Action Method
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var productType = _db.ProductTypes.Find(id);
+            if (productType == null)
+            {
+                return NotFound();
+            }
+
+            return View(productType);
+        }
+
+        // Post Delete Action Method
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(int? id, ProductTypes productTypes)
+        {
+            if(id == null)
+            {
+                return NotFound();
+            }
+
+            if(id != productTypes.Id)
+            {
+                return NotFound();
+            }
+
+            var productType = _db.ProductTypes.Find(id);
+            if(productType == null)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                _db.Remove(productType);
+                await _db.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(productTypes);
         }
     }
 }
