@@ -169,3 +169,4 @@ C:\.NET MVC Ecommerce\OnlineShop\OnlineShop\obj\Debug\netcoreapp3.1\OnlineShop.g
 C:\.NET MVC Ecommerce\OnlineShop\OnlineShop\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\ProductTypes\Index.cshtml.g.cs
 C:\.NET MVC Ecommerce\OnlineShop\OnlineShop\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\ProductTypes\Create.cshtml.g.cs
 C:\.NET MVC Ecommerce\OnlineShop\OnlineShop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ButtonPartial.cshtml.g.cs
+C:\.NET MVC Ecommerce\OnlineShop\OnlineShop\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\ProductTypes\Edit.cshtml.g.cs
