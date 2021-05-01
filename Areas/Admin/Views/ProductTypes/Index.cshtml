@@ -25,12 +25,15 @@
                 @Html.DisplayNameFor(c => c.ProductType)
             </th>
             <th></th>
+            <th></th>
         </tr>
         @foreach(var item in Model)
         {
             <tr>
                 <td>@item.ProductType</td>
-                <td>Edit | Details | Delete</td>
+                <td>
+                    <partial name="_ButtonPartial" model="@item.Id"/>
+                </td>
             </tr>
         }
     </table>
